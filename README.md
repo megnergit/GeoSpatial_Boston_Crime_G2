@@ -1,50 +1,56 @@
-# Geospatial Data Exercise G1
+#ø Geospatial Data Exercise G2
 
-This is the exercise note for the second lesson of the kaggle course
+This is a notebook for the third lesson of the kaggle course
 ["Geospatial Analysis"](https://www.kaggle.com/learn/geospatial-analysis)
-offered by Alexis Cook and Jessica Li. The main goal of the lesson is to
-get used to __Coordinate Reference System__.
+prepared by Alexis Cook and Jessica Li. The main goal of the lesson is
+to get used to __Interactive Maps__. We will learn how to use `folium`
+with following functions.
+
+* Map
+* Marker
+* MarkerCluster
+* Circle (= bubble map)
+* HeatMaps
+* Choropleth
 
 ------------------------------------------------------------------
 ## How to run the Demo
 
-1. Load `exercise-coordinate-reference-systems.ipynb' to Jupyter Notebook,
-   and run, or
+1. Load `interactive-maps.ipynb' to Jupyter Notebook and run, or
 
-2. `> python3 exercise-coordinate-reference-systems.py`
+2. `> python3 interactive-maps.py`
 
 ------------------------------------------------------------------
 ## Task
-
-Purple martin (a species of bird) spend the summer in the eastern
-United States, and migrate to South America in the winter. Show how
-the birds migrate. Overlay their winter residence with the public
-sanctuaries. See if the protected areas really provide the useful life
-infrastructure to the birds.
-
-1. __Assessment of current situation__ : Are the protected areas functioning? 
-2. __Future strategy__ : What is the first priority for the next move?
+Create various plots using functions of `folium`. Describe your observations.
 
 ------------------------------------------------------------------
 ## Directory Tree
 ```
-.
-├── README.md
-├── doc
-│   ├── Summary_table_WDPA_WDOECM_attributes.pdf
-│   ├── WDPA_WDOECM_Manual_1_6.pdf
-│   └── WDPA_WDOECM_Metadata_1_6.pdf
-├── exercise-coordinate-reference-systems.ipynb
-├── exercise-coordinate-reference-systems.py
-├── local.html
-├── m_2.html
-├── m_3.html
-└── requirements.txt
-```
 
+├── LICENSE
+├── README.md
+├── interactive-maps.ipynb
+├── interactive-maps.py
+├── m_1.html
+├── m_1b.html
+├── m_2.html
+├── m_2b.html
+├── m_3.html
+├── m_3b.html
+├── m_4.html
+├── m_5.html
+├── m_5b.html
+├── m_6.html
+├── m_6b.html
+├── m_7.html
+├── m_7b.html
+├── p_1.html
+└── requirements.txt
+
+```
 * HTML files are made by `folium` package to vizualize geospatial data.
 * doc files contains table infos of the data, `protected_areas`.
-
 ------------------------------------------------------------------
 END
 
