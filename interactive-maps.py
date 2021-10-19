@@ -48,10 +48,10 @@ import zipfile
 import plotly.graph_objs as go
 import folium
 from folium import Choropleth, Circle, Marker
-from folium.plugins import HeatMap, MarkerCluster, HeatMap
+from folium.plugins import HeatMap, MarkerCluster
 
 # -------------------------------------------------------
-# | Some housekeeping functions. 
+# | Some housekeeping functions.
 # | Later they will go to a module ``../kaggle_geospatial`.
 
 
@@ -136,7 +136,7 @@ crimes = pd.read_csv(crimes_dir+'crime.csv', encoding='latin-1')
 
 # | The meanings of the columns are more or less obvious except 'UCR_PART'.
 # | [UCR (Uniform Crime Reporting)](https://en.wikipedia.org/wiki/Uniform_Crime_Reports)
-# | 
+# |
 # | * Part I  : 8 serious crimes.
 # | * Part II : 21 less commonly reported crimes.
 # | * Part III: unclear.
@@ -307,7 +307,7 @@ districts = gpd.read_file(districts_dir + 'Police_Districts.shp')
 # | 2. join the two GeoDataFrames (`districts` and `crimes`) and use it in Choropleth.
 
 # | Let us try 2. here.
-# | Here both of the data frames to be merged are GeoDataFrame, but 
+# | Here both of the data frames to be merged are GeoDataFrame, but
 # | we we merge pd.DataFrame and gpd.GeoDataFrame, make sure
 # | gpd.GeoDataFrame is on the left, otherwise the merged data frame
 # | will be pd.DataFrame instead of gpd.GeoDataFrame.
@@ -325,12 +325,12 @@ districts.sort_values('INCIDENT_NUMBER', ascending=False)
 # -------------------------------------------------------
 tiles = 'cartodbpositron'
 m_7 = folium.Map(location=center, tiles=tiles, zoom_start=zoom)
-cp = Choropleth(geo_data=districts.__geo_interface__,
-                data=districts['INCIDENT_NUMBER'],
-                #           key_on='feature.properties.DISTRICT',
-                key_on='feature.id',
-                fill_color='YlGnBu',
-                legend_name="Number of Violent Crimes in Boston (Jan-Aug 2018)").add_to(m_7)
+Choropleth(geo_data=districts.__geo_interface__,
+           data=districts['INCIDENT_NUMBER'],
+           #           key_on='feature.properties.DISTRICT',
+           key_on='feature.id',
+           fill_color='YlGnBu',
+           legend_name="Number of Violent Crimes in Boston (Jan-Aug 2018)").add_to(m_7)
 
 # -------------------------------------------------------
 # | Show it on the notebook and the browser window.
